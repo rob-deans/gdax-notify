@@ -1,5 +1,36 @@
-<html>
-    <body>
-        Hello world!
-    </body>
+<!DOCTYPE>
+<html ng-app="gdax-notification">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <title>Gdax</title>
+</head>
+<body>
+    <div class="container" ng-controller="AppCtrl">
+
+        <div class="container">
+            <div class="row">
+                <div ng-repeat="account in accounts" class="col-lg-2">
+                    {{account.currency}} : {{account.balance}}
+                </div>
+            </div>
+        </div>
+
+        <div>Orders</div>
+        <div ng-repeat="order in orders">
+                <div ng-style="order.side === 'sell' ? {'background-color': '#ff0000'} : {'background-color': '#00ff00'}">{{order.product_id}} - {{order.price}} : {{order.size}} {{order.side}}</div>
+        </div>
+
+        <div>Fills</div>
+        <div ng-repeat="fill in fills">
+                <div ng-style="fill.side === 'sell' ? {'background-color': '#ff0000'} : {'background-color': '#00ff00'}">{{fill.product_id}} - {{fill.price}} : {{fill.size}} : {{fill.side}}</div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
 </html>
