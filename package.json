@@ -1,0 +1,11 @@
+{
+  "name": "gdax-notify",
+  "version": "1.0.0",
+  "description": "An application to notify of fills from gdax",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Rob Deans",
+  "license": "MIT"
+}
